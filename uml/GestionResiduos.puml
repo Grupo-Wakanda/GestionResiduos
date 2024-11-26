@@ -1,6 +1,7 @@
 @startuml
 
 abstract class Contenedor{
+    -id: long
     -capacidad: double
     -residuos: List<Residuo>
     +Contenedor(capacidad: double, residuos: List<Residuo>, tipo: String)
@@ -32,6 +33,7 @@ class ContenedorPlastico extends Contenedor
 class ContenedorPapelCarton extends Contenedor
 class ContenedorOrganico extends Contenedor
 abstract class Residuo{
+    -id: long
     -tipo: String
     -peso: double
     +Residuo(tipo: String, peso: double)
@@ -45,9 +47,19 @@ class ResiduoEnvases extends Residuo
 class ResiduoPlastico extends Residuo
 class ResiduoPapelCarton extends Residuo
 
-class ResiduoService{}
-class ContenedorService{}
-
+class ResiduoService{
+    +crearResiduo()
+    +agregarResiduo(residuo: Residuo)
+}
+class ContenedorService{
+    +crearContenedor()
+    +agregarContenedor(contenedor: Contenedor)
+}
+class GestorResiduos{
+    -contenedores: List<Contenedor>
+    -residuos: List<Residuo>
+    +GestorResiduos(contenedores: List<Contenedor>, residuos: List<Residuo)
+}
 
 
 @enduml

@@ -1,0 +1,23 @@
+@startuml
+autonumber
+
+participant "Contenedor" as C
+participant "Residuo" as R
+participant "ContenedorService" as CS
+participant "ResidoController" as RC
+participant "ResiduoService" as RS
+participant "ResiduoFactory" as RF
+participant "ContenedorRepository" as CR
+participant "ResiduoRepository" as RR
+participant "ContenedorFactory" as CF
+participant "GestorResiduos" as GR
+
+CS -> CF : crearContenedor()
+CF -> C : Contenedor(capacidad: double, residuos: List<Residuo>, tipo: String)
+CS -> GR : agregarContenedor(contenedor: Contenedor)
+
+
+
+
+
+@enduml
