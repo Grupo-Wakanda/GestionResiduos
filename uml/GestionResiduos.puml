@@ -1,0 +1,53 @@
+@startuml
+
+abstract class Contenedor{
+    -capacidad: double
+    -residuos: List<Residuo>
+    +Contenedor(capacidad: double, residuos: List<Residuo>, tipo: String)
+    +recibirResiduo()
+    +vaciarContenedor()
+}
+class ContenedorOrganico{
+    +Contenedor(capacidad: double, residuos: List<Residuo>, tipo: String)
+    +recibirResiduo()
+    +vaciarContenedor()
+}
+class ContenedorEnvases{
+    +Contenedor(capacidad: double, residuos: List<Residuo>, tipo: String)
+    +recibirResiduo()
+    +vaciarContenedor()
+}
+class ContenedorPlastico{
+    +Contenedor(capacidad: double, residuos: List<Residuo>, tipo: String)
+    +recibirResiduo()
+    +vaciarContenedor()
+}
+class ContenedorPapelCarton{
+    +Contenedor(capacidad: double, residuos: List<Residuo>, tipo: String)
+    +recibirResiduo()
+    +vaciarContenedor()
+}
+class ContenedorEnvases extends Contenedor
+class ContenedorPlastico extends Contenedor
+class ContenedorPapelCarton extends Contenedor
+class ContenedorOrganico extends Contenedor
+abstract class Residuo{
+    -tipo: String
+    -peso: double
+    +Residuo(tipo: String, peso: double)
+}
+class ResiduoOrganico{}
+class ResiduoEnvases{}
+class ResiduoPlastico{}
+class ResiduoPapelCarton{}
+class ResiduoOrganico extends Residuo
+class ResiduoEnvases extends Residuo
+class ResiduoPlastico extends Residuo
+class ResiduoPapelCarton extends Residuo
+
+class ResiduoService{}
+class ContenedorService{}
+
+
+
+@enduml
