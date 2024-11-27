@@ -1,0 +1,13 @@
+@startuml
+autonumber
+
+participant "ContenedorService" as CS
+participant "ContenedorFactory" as CF
+participant "Contenedor" as C
+participant "ContenedorRepository" as CR
+
+CS -> CF : crearContenedor()
+CF -> C : Contenedor()
+C -> CF : Contenedor
+CS ->CR : agregarContenedor()
+@enduml

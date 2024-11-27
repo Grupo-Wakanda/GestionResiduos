@@ -1,0 +1,12 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+autonumber
+participant "ContenedorService" as CS
+participant "ResiduoService" as RS
+participant "Contenedor" as C
+participant "Residuo" as R
+
+
+
+
+@enduml
