@@ -1,6 +1,9 @@
 package contenedor;
 
 import jakarta.persistence.*;
+import residuo.Residuo;
+
+import java.util.List;
 
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 @Entity
