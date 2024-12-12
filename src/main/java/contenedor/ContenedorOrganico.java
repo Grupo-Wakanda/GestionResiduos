@@ -12,6 +12,10 @@ public class ContenedorOrganico extends Contenedor{
         super(id, capacidad, residuos);
     }
 
+    public ContenedorOrganico(double capacidad) {
+        super(capacidad);
+    }
+
     public ContenedorOrganico() {
         super();
     }

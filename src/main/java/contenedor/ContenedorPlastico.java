@@ -12,6 +12,10 @@ public class ContenedorPlastico extends Contenedor{
         super(id, capacidad, residuos);
     }
 
+    public ContenedorPlastico(double capacidad) {
+        super(capacidad);
+    }
+
     public ContenedorPlastico() {
         super();
     }

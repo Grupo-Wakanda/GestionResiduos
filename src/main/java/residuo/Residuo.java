@@ -1,5 +1,6 @@
 package residuo;
 
+import contenedor.Contenedor;
 import jakarta.persistence.*;
 
 @Entity
@@ -15,10 +16,19 @@ public class Residuo {
     @Column(name = "peso")
     protected double peso;
 
-    public Residuo(Long id, String tipo, double peso) {
-        this.id = id;
+    @ManyToOne
+    @JoinColumn(name = "contenedor_id", nullable = false)
+    private Contenedor contenedor;
+
+    public Residuo(String tipo, double peso) {
         this.tipo = tipo;
         this.peso = peso;
+    }
+
+    public Residuo(String tipo, double peso, Contenedor contenedor) {
+        this.tipo = tipo;
+        this.peso = peso;
+        this.contenedor = contenedor;
     }
 
     public Residuo() {
@@ -47,5 +57,13 @@ public class Residuo {
 
     public Long getId() {
         return id;
+    }
+
+    public Contenedor getContenedor() {
+        return contenedor;
+    }
+
+    public void setContenedor(Contenedor contenedor) {
+        this.contenedor = contenedor;
     }
 }

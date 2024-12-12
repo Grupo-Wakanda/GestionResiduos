@@ -20,6 +20,10 @@ public class Contenedor {
     @OneToMany(mappedBy = "contenedor", cascade = CascadeType.ALL, orphanRemoval = true)
     protected List<Residuo> residuos;
 
+    public Contenedor(double capacidad) {
+        this.capacidad = capacidad;
+    }
+
     public Contenedor(Long id, double capacidad, List<Residuo> residuos) {
         this.id = id;
         this.capacidad = capacidad;
