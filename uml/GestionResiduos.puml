@@ -1,12 +1,11 @@
 @startuml
 
 package "ContenedorContenedores" {
-   abstract class Contenedor{
+   class Contenedor{
        -id: long
        -capacidad: double
        -residuos: List<Residuo>
        +Contenedor(capacidad: double, residuos: List<Residuo>, tipo: String)
-
    }
    class ContenedorOrganico{
        +Contenedor(capacidad: double, residuos: List<Residuo>, tipo: String)
