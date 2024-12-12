@@ -1,53 +1,44 @@
 package contenedor;
 
 import jakarta.persistence.*;
-import residuo.Residuo;
 
-import java.util.List;
 
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 @Entity
 public class Contenedor {
 
-
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     protected Long id;
 
-    @Column(name = "capacidad")
-    protected double capacidad;
+    @Column(name = "recolectable")
+    protected boolean esRecolectable;
 
-    @OneToMany(mappedBy = "contenedor", cascade = CascadeType.ALL, orphanRemoval = true)
-    protected List<Residuo> residuos;
+    @Column(name = "tipo")
+    protected Tipo tipo;
 
-    public Contenedor(double capacidad) {
-        this.capacidad = capacidad;
+    public Contenedor(boolean esRecolectable, Tipo tipo) {
+        this.esRecolectable = esRecolectable;
+        this.tipo = tipo;
     }
 
-    public Contenedor(Long id, double capacidad, List<Residuo> residuos) {
-        this.id = id;
-        this.capacidad = capacidad;
-        this.residuos = residuos;
+    public Contenedor() {}
+
+    public boolean isEsRecolectable() {
+        return esRecolectable;
     }
 
-    public Contenedor() {
-
+    public void setEsRecolectable(boolean esRecolectable) {
+        this.esRecolectable = esRecolectable;
     }
 
-    public double getCapacidad() {
-        return capacidad;
+    public Tipo getTipo() {
+        return tipo;
     }
 
-    public void setCapacidad(double capacidad) {
-        this.capacidad = capacidad;
-    }
-
-    public List<Residuo> getResiduos() {
-        return residuos;
-    }
-
-    public void setResiduos(List<Residuo> residuos) {
-        this.residuos = residuos;
+    public void setTipo(Tipo tipo) {
+        this.tipo = tipo;
     }
 
     public void setId(Long id) {
