@@ -12,6 +12,10 @@ public class ContenedorPapel extends Contenedor{
         super(id, capacidad, residuos);
     }
 
+    public ContenedorPapel(double capacidad) {
+        super(capacidad);
+    }
+
     public ContenedorPapel() {
         super();
     }
